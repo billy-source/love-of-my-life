@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Heart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          keyframes: {
+            'pulse-grow': {
+              '0%, 100%': { transform: 'scale(1)' },
+              '50%': { transform: 'scale(1.2)' },
+            },
+            'fade-in': {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+          },
+          animation: {
+            'pulse-grow': 'pulse-grow 1.5s ease-in-out infinite',
+            'fade-in': 'fade-in 2s ease-out',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-pink-100 flex items-center justify-center h-screen">
+
+  <div class="text-9xl text-pink-500 animate-pulse-grow animate-fade-in">
+    ❤️
+  </div>
+
+</body>
+</html>
